@@ -1,6 +1,8 @@
-import React from 'react'
+import React from "react";
 
-function Form({ setTodo, setTodoList, todo, todoList, setStatus }) {
+
+
+function Form({ setTodo, setTodoList, todo, todoList, setStatus}) {
 
     const textInInputBox = (e) => {
         setTodo(e.target.value);
@@ -9,10 +11,10 @@ function Form({ setTodo, setTodoList, todo, todoList, setStatus }) {
 
     const addToList = (e) => {
         e.preventDefault();
-        console.log("hhey")
-        setTodoList([...todoList, todo]);
+        setTodoList([...todoList, { id: Math.floor(Math.random() * 1000), compStatus : false, text: todo }]);
         setTodo("");
     }
+
 
     const selectStatus = (e) => {
         console.log(e.target.value);
