@@ -2,7 +2,7 @@ import React from 'react'
 
 function Todo({item, todoList, setTodoList}) {
 
-    const compOrnot = (e) =>{
+    const toggleBtn = (e) =>{
         let newList = todoList.map(el => {
             if (el.id === item.id){
                 return {...el, compStatus : !el.compStatus}
@@ -16,8 +16,8 @@ function Todo({item, todoList, setTodoList}) {
 
     return (
         <div>
-            <h3> {item.text} </h3>
-            <button onClick={compOrnot} type="button">toggle</button>
+            <h3 className ={item.compStatus === true ? "strikeOut" : ""}> {item.text} </h3>
+            <button onClick={toggleBtn} type="button">toggle</button>
         </div>
     )
 }

@@ -23,7 +23,7 @@ function Form({ setTodo, setTodoList, todo, todoList, setStatus}) {
 
     return (
         <div>
-            <input onChange={textInInputBox} type="text"></input>
+            <input onChange={textInInputBox} value={todo} type="text"></input>
             <button onClick={addToList} type="submit">+</button>
             <select onChange={selectStatus} name="cars" id="cars">
                 <option value="All">All</option>
