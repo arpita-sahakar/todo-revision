@@ -9,6 +9,12 @@ function App() {
   const [status, setStatus] = useState("All");
   const [filteredList, setFilteredList] = useState([]);
 
+  useEffect(() => {
+    if (localStorage.getItem("todoListkey") != null) {
+      setTodoList(JSON.parse(localStorage.getItem("todoListkey")));
+    }
+  }, []);
+
   const filterResult = () => {
     if (status === "Completed") {
       setFilteredList(
@@ -35,11 +41,7 @@ function App() {
     localStorage.setItem("todoListkey", JSON.stringify(todoList));
   }, [todoList]);
 
-  useEffect(() => {
-    if (localStorage.getItem("todoListkey") != null) {
-      setTodoList(JSON.parse(localStorage.getItem("todoListkey")));
-    }
-  }, []);
+
 
   return (
     <div>
