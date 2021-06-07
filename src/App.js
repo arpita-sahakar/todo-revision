@@ -44,8 +44,8 @@ function App() {
 
 
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className="App">
+      <h1>Enter your Todo</h1>
       <Form
         todo={todo}
         setTodo={setTodo}
